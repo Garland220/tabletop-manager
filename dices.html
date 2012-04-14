@@ -1,0 +1,20 @@
+<h1>Dices3</h1>
+<div id="diceBag" name="diceBag">
+	<a OnClick="doRoll('1d4+0');" title="1d4"><div class="dice diceSprite" style="background-position: 0 0;"></div></a>
+	<a OnClick="doRoll('1d6+0');" title="1d6"><div class="dice diceSprite" style="background-position: -50px 0;"></div></a>
+	<a OnClick="doRoll('1d8+0');" title="1d8"><div class="dice diceSprite" style="background-position: -99px 0;"></div></a>
+	<a OnClick="doRoll('1d10+0');" title="1d10"><div class="dice diceSprite" style="background-position: -149px 0;"></div></a>
+	<a OnClick="doRoll('1d100+0',10);" title="1d100"><div class="dice diceSprite" style="background-position: -199px 0;"></div></a>
+	<a OnClick="doRoll('1d12+0');" title="1d12"><div class="dice diceSprite" style="background-position: -249px 0;"></div></a>
+	<a OnClick="doRoll('1d20+0');" title="1d20"><div class="dice diceSprite" style="background-position: -300px 0;"></div></a>
+	<a OnClick="percRoll();" style="text-decoration: none;" title="1d100"><div class="dice" style="border: none; color: #9f1b1a; font-size: 50px; text-indent: 3px;">%</div></a>
+</div><br style="clear: both;" />
+<center><input type="text" value="1d3+0" class="text" name="diceBox" id="diceBox" />
+<input type="button" class="button" value="roll" OnClick="doRoll($('#diceBox').val());" /><br /><br /></center>
+<label for="usesound"><input type="checkbox" name="usesound" id="usesound" value="Enable Sounds" />Enable Sounds</label><br />
+<label for="showall"><input type="checkbox" name="showall" id="showall" value="Show each dice result" />Show each dice result</label><br />
+<label for="multimod"><input type="checkbox" name="multimod" id="multimod" value="Apply mod to each roll" />Apply mod to each roll</label><br />
+<label for="droplowest"><input type="checkbox" name="droplowest" id="droplowest" value="Drop Lowest" OnClick="toggle(this,$('#dropValue'));" />Drop Lowest: </label><br />
+	<input style="margin-left: 35px; margin-top: 3px;" type="text" id="dropValue" value="0" class="disabled" disabled="true" />
+<br /><br />
+<div id="results" name="results"></div>

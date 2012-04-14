@@ -1,0 +1,29 @@
+<h1>Daily Do</h1>
+<div class="menuButton button">Starvation/Thirst Rules
+	<div class="menu downMenu alignLeft" style="color: black;">
+		In normal climates, Medium characters need at least a gallon of fluids and about a pound of decent food per day to avoid starvation. (Small characters need half as much.) In very hot climates, characters need two or three times as much water to avoid dehydration.
+		A character can go without water for 1 day plus a number of hours equal to his Constitution score. After this time, the character must make a Constitution check each hour (DC 10, +1 for each previous check) or take 1d6 points of nonlethal damage.
+		A character can go without food for 3 days, in growing discomfort. After this time, the character must make a Constitution check each day (DC 10, +1 for each previous check) or take 1d6 points of nonlethal damage.
+		Characters who have taken nonlethal damage from lack of food or water are fatigued. Nonlethal damage from thirst or starvation cannot be recovered until the character gets food or water, as needed not even magic that restores hit points heals this damage. 
+	</div>
+</div>
+<form name="inputs" id="inputs">
+	<table id="players" name="players">
+	</table>
+	<table style="" width="100%">
+	<tr id="addNew" name="addNew"><td width="30"><input type="button" onClick="addInput(null,true);" id="newPlayer" name="newPlayer" value="+" label="Add new player" /></td><td>Add new user</td></tr>
+	</table><br />
+	<select onChange="updateClimate(this.value);" name="climate" id="climate">
+		<option value="0">Temperate (Warm)</option>
+		<option value="1">Temperate (Moderate)</option>
+		<option value="2">Cold</option>
+		<option value="3">Desert</option>
+	</select>
+	<input type="text" id="tempMod" name="tempMod" placeholder="Temperature Modifier" onChange="updateTempMod(this.value);" /><br />
+	<center><textarea name="weather" id="weather" style="width: 400px; height: 200px; resize: none; overflow: auto;" readonly></textarea></center><br />
+	<input type="button" name="nextDay" id="nextDay" onClick="advanceDay();" value="Next Day" />
+	<input type="button" name="rerollWeather" id="rerollWeather" onClick="generateWeather();" value="Reroll Weather" />
+</form>
+<script type="text/javascript">
+	dailyLoad();
+</script>

@@ -1,0 +1,50 @@
+<h1>Inventory Manager</h1>
+<script>
+var item = new Shield();
+item.Weight = 10;
+var item2 = new Armor();
+item2.Weight = 11;
+var container = new Container();
+container.AddItem(item);
+container.AddItem(item2);
+container.AddItem(new Potion());
+container.AddItem(new Wand());
+container.AddItem(new Scroll());
+container.AddItem(new Food());
+
+function AddItem(x) { container.AddItem(x); DisplayContents(container); }
+
+$(function() {
+	var oldID = 0;
+	var newID = 0;
+	$("#inventory").sortable({
+	            //connectWith: '.connectedSortable',
+	            forcePlaceholderSize: true,
+				cursor: "move",
+	            update: function(event, ui){
+					//alert("test");
+					container.ReOrder($("#inventory").sortable("toArray"));
+					//alert(container.Contents.toString());
+	            }
+	        }).disableSelection();
+});
+
+function DisplayContents(cont) {
+	$("#inventory").empty();
+	for (i=0;i<container.Contents.length;i++) {
+		var item = container.Contents[i];
+		$("#inventory").append('<li id="'+$(item).serialize()+'"><a href="#" title="'+item.Name+'"><img src="images/icons/items/'+item.Graphic+'" alt="'+item.Name+'" /></a></li>');
+	}
+	$("#currentTotalWeight").html(container.GetWeight());
+}
+if (container != null)
+	DisplayContents(container);
+</script>
+
+<div id="Weight">
+	Total Weight: <span id="currentTotalWeight">0</span> lbs
+</div>
+<hr />
+<ul id="inventory"></ul>
+<br class="clear" />
+<hr />

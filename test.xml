@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Server SYSTEM "opt/pdos/etc/pdoslrd.dtd">
+<items>
+	<item>
+		<name>Longsword</name>
+		<type>2</type>
+	</item>
+	<item>
+		<name>Shortsword</name>
+	</item>
+</items>

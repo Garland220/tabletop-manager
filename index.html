@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Strict//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<link rel="stylesheet" href="resources/css/default.css" type="text/css" />
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+		<script language="JavaScript" type="text/javascript" src="resources/js/jQuery/jquery-1.6.2.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/jQuery/jquery-ui-1.8.14.custom.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/jQuery/jquery.sound.js"></script>
+
+		<script language="JavaScript" type="text/javascript" src="resources/js/util.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/dices.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/items.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/mobiles.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/regions.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/weather.js"></script>
+
+		<script language="JavaScript" type="text/javascript" src="resources/js/daily.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/namegen.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/lootgen.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/content.js"></script>
+
+		<script language="JavaScript" type="text/javascript" src="resources/js/Serialization/Serialization.js"></script>
+		<script language="JavaScript" type="text/javascript" src="resources/js/Serialization/BinaryWriter.js"></script>
+		<script>
+			$(function(){
+				$(".menuButton").click(function(){
+					toggleMenuChild( this );
+				});
+				$(".menuButton").hover(function(){
+					if (this != openMenu)
+						toggleMenuChild( this );
+				}, function(){});
+			});
+		</script>
+		<title>Pathfinder Toolset</title>
+	</head>
+	<body onclick="clickHandle(event.target);" onLoad="LoadContent();">
+		<div id="footer"></div>
+		<div id="header"></div>
+		<div id="main"><h1>Pathfinder Toolset</h1>Loading...</div>
+		<embed src="resources/audio/dice.wav" height="0" width="0" id="soundobj" name="soundobj" type="application/x-mplayer2" autostart="false" enablejavascript="true" loop="0" volume="100"></embed>
+	</body>
+</html>
