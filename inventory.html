@@ -33,7 +33,7 @@ function DisplayContents(cont) {
 	$("#inventory").empty();
 	for (i=0;i<container.Contents.length;i++) {
 		var item = container.Contents[i];
-		$("#inventory").append('<li id="'+$(item).serialize()+'"><a href="#" title="'+item.Name+'"><img src="images/icons/items/'+item.Graphic+'" alt="'+item.Name+'" /></a></li>');
+		$("#inventory").append('<li id="'+$(item).serialize()+'"><a href="#" title="'+item.Name+'"><img src="resources/img/icons/items/'+item.Graphic+'" alt="'+item.Name+'" /></a></li>');
 	}
 	$("#currentTotalWeight").html(container.GetWeight());
 }
